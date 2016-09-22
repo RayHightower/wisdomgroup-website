@@ -2,6 +2,113 @@
 layout: default
 ---
 
+{% include header.html %}
+
+<section id="intro">
+  <h1>8th Light Acquires WisdomGroup.</h1>
+  
+  <h2 class="h2-link"><a href="/8thlight">Learn more about our next chapter.</a></h2>
+</section>
+
+<section id="case_studies">
+  {{ '/case-studies' | item_from_path | assign_to: 'studies' }}
+  <ul class="cs_nav">
+    {% for study in studies.children %}
+      <li class="{{ study.slug }}">
+        <a href="{{ study.url }}"><img src="{{ study.data.navigation_icon.url }}">
+        <h1>{{ study.data.industry }}</h1></a>
+        {{ study.data.home_page_teaser }}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section id="teamwork">
+  <header>
+    <h1>Producing Results for You</h1>
+
+    <h2>You know your business. WisdomGroup knows software.
+    Our team will work with your team to build great results for you.</h2>
+  </header>
+
+  <section>
+    <h3>Design</h3>
+    <p>Steve Jobs said it best: &#8220;Design is not just what [a product] looks like and feels like. Design is how it works.&#8221; A well-designed commerce app will make it easy for the customer to buy. Our apps use design to solve problems and generate revenue. Let's put those skills to work for you.</p>
+  </section>
+
+  <section>
+    <h3>Development</h3>
+    <p>When designers and developers work together toward a shared goal, the results are amazing. WisdomGroup uses the <a href="/blog/a-business-view-of-ruby-on-rails/">Ruby on Rails</a> framework to develop web apps. Using Rails enables us to deliver a better product for you and your team. Our current clients like our results. You will, too.</p>
+  </section>
+
+  <section>
+    <h3>Growth</h3>
+    <p>Everyone wins when a business succeeds. Customers get the products and services that they need, and companies earn money for future growth. Are you ready to move forward with your next software project? If you have questions, you might start with <a href="/blog/answers-for-business-leaders/">Answers for Business Leaders</a>.</p>
+  </section>
+</section> 
+
+<section id="community">
+  <div>
+    <header>
+      <h1>Tech Community Leadership</h1>
+      <h2>WisdomGroup leads technology communities in the USA and the Caribbean. Our work includes...</h2>
+    </header>
+
+    <section id="community_cr">
+      <h3><a href="http://chicagoruby.org" class="ir">ChicagoRuby</a></h3>
+    <p>ChicagoRuby is a group of Ruby and Rails enthusiasts. WisdomGroup assumed leadership of a local Ruby user group in 2007. We changed the group's name to ChicagoRuby, boosted membership, and merged with Chicago&#8217;s other Ruby user group, <a href="http://www.chicagoruby.org/about/history/">Chirb</a>. Today ChicagoRuby hosts six events each month plus conferences in the USA and the Caribbean.</p> 
+    <p>Growth strategy: <a href="http://rayhightower.com/blog/2014/05/30/how-to-grow-a-user-group/">How to Start and Grow a User Group</a>.</p>
+    </section>
+
+    <section id="community_wcr">
+      <h3><a href="http://windycityrails.com" class="ir">WindyCityRails</a></h3>
+      <p>WindyCityRails is an annual conference for all who are passionate about Rails, Ruby, and related technologies. WisdomGroup created WindyCityRails in 2008. The conference attracts people from many facets of the software industry: Developers, designers, entrepreneurs, and investors. <a href="http://windycityrails.com/video">Presentation videos</a> will give you a feel for the content.</p>
+      <p><a href="http://windycityrails.com">WindyCityRails</a> is held every year in September.</p>
+    </section>
+    
+    <section id="community_wct">
+      <h3><a href="http://windycitythings.com" class="ir">WindyCityThings</a></h3>
+      <p>WindyCityThings is an <a href="http://windycitythings.com">Internet of Things (IoT) conference</a> that cuts through the hype to deliver actionable information right now. Where should you focus your time & energy in the IoT space? What do you need to learn? How do you get your product built? Build your network and get answers at WindyCityThings.</p>
+      <p>Feel the excitement of WindyCityThings in this <a href="https://windycitythings.com/recap/2016">3-minute video</a>. </p>
+    </section>
+    
+    <section id="community_rc">
+      <h3><a href="http://rubycaribe.com" class="ir">RubyCaribe</a></h3>
+      <p>Based in the Caribbean, <a href="http://rubycaribe.com">RubyCaribe</a> (pronounced ka-REEB) is a conference for software developers who use Ruby. While creating RubyCaribe, WisdomGroup established a collaborative relationship with the <a href="http://cavehill.uwi.edu/">University of the West Indies (UWI)</a> which led to the founding of the <a href="http://linuxbarbados.org">LinuxBarbados</a> user group.</p>
+    </section>
+    
+    <section id="community_lb">
+      <h3><a href="http://linuxbarbados.org" class="ir">LinuxBarbados</a></h3>
+      <p>LinuxBarbados meets monthly at UWI and online. Live video is is available for members who are not based in Barbados. The membership and agenda are eclectic: Some professionals, some students, always thirsty to learn and share knowledge. Join the group at <a href="http://linuxbarbados.org">LinuxBarbados.org</a>.</p>
+    </section>
+  </div>
+</section>
+
+<section id="words">
+  <header>
+    <h1>Shared Learning</h1>
+    <h2>Knowledge leaders thrive on inspiration, insight, and information.
+    This section is a collection of the three.</h2>
+  </header>
+
+  {{ '/blog' | item_from_path | assign_to: 'posts' }}
+  <ul class="words_nav">
+    {% for post in posts.recent_posts.3 %}
+      <li>
+        <h3><a class="article_btn {{ post.data.color }}" href="{{ post.url }}">
+        <img src="{{ post.data.icon.url }}"> {{ post.data.short_title }}</a></h3>
+        <p>{{ post.data.teaser }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <!-- <a class="button" href="/blog">More Articles</a> -->
+</section>
+
+{% include footer.html %}
+
+
+
 <div class="home">
 
   <h1 class="page-heading">Posts</h1>
