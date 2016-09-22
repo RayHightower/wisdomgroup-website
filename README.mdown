@@ -1,1 +1,4 @@
-All the action happens in the gh-pages branch.
+WisdomGroup.com
+===
+
+[WisdomGroup was acquired by 8th Light](http://wisdomgroup.com/8thlight) in September 2016. This is the source code for the old [WisdomGroup.com](http://wisdomgroup.com) site, preserved for history.
